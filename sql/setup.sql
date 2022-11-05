@@ -3,10 +3,10 @@
 DROP TABLE IF EXISTS cars;
 
 CREATE TABLE cars (
-    id BIGINT GENERATED ALWAYS AS IDENTITY
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
     make VARCHAR NOT NULL,
     model VARCHAR NOT NULL,
-    year INT NOT NULL,
+    year INT NOT NULL
 );
 
 INSERT INTO cars (make, model, year)
@@ -15,4 +15,4 @@ VALUES
 ('Lexus', 'IS500', 2022),
 ('BMW', 'M5', 2018),
 ('Audi', 'RS7', 2020),
-('Chevorlet Corvette','ZR1', 2019)
+('Chevorlet Corvette','ZR1', 2019);
