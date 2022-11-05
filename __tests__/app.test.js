@@ -16,6 +16,17 @@ describe('cars routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
+
+  it('/cars/:id should return car detail', async () => {
+    const res = await request(app).get('/cars/1');
+    const toyota = {
+      id: '1',
+      make: 'toyota',
+      model: 'corolla',
+      year: 1996,
+    };
+    expect(res.body).toEqual(toyota);
+  });
   afterAll(() => {
     pool.end();
   });
