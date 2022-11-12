@@ -5,7 +5,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 const { cars } = require('../lib/cars-data.js');
 
-describe('cars routes', () => {
+describe('cars books routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
@@ -27,6 +27,18 @@ describe('cars routes', () => {
     };
     expect(res.body).toEqual(toyota);
   });
+
+  it('/books should return list of books', async () => {
+    const res = await request(app).get('/books/1');
+    const allAboutLove = {
+      id: '1',
+      title: 'all about love',
+      author: 'bell hooks',
+      published: 2000,
+    };
+    expect(res.body).toEqual(allAboutLove);
+  });
+
   afterAll(() => {
     pool.end();
   });

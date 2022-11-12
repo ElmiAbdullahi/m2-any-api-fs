@@ -16,3 +16,20 @@ VALUES
 ('BMW', 'M5', 2018),
 ('Audi', 'RS7', 2020),
 ('Chevorlet Corvette','ZR1', 2019);
+
+DROP TABLE IF EXISTS books;
+
+CREATE TABLE books (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR NOT NULL,
+    author VARCHAR NOT NULL,
+    publisher INT NOT NULL
+);
+
+INSERT INTO books (title, author, publisher)
+VALUES
+('all about love', 'bell hooks', 2000),
+('as a man thinketh', 'james allen', 1903),
+('48 laws of power', 'robert greene', 1998),
+('the alchemist', 'paulo coelho', 1998),
+('the body keeps score','bessel van der kolk', 2014);
