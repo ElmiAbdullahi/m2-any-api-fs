@@ -17,16 +17,16 @@ VALUES
 ('Audi', 'RS7', 2020),
 ('Chevorlet Corvette','ZR1', 2019);
 
-DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS books2;
 
-CREATE TABLE books (
+CREATE TABLE books2 (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     title VARCHAR NOT NULL,
     author VARCHAR NOT NULL,
-    publisher INT NOT NULL
+    published INT NOT NULL
 );
 
-INSERT INTO books (title, author, publisher)
+INSERT INTO books2 (title, author, published)
 VALUES
 ('all about love', 'bell hooks', 2000),
 ('as a man thinketh', 'james allen', 1903),
