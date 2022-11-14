@@ -10,7 +10,7 @@ describe('cars books routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it.skip('/cars should return list of cars', async () => {
+  it('/cars should return list of cars', async () => {
     const res = await request(app).get('/cars');
     const expected = cars.map((car) => {
       return { id: car.id, make: car.make, model: car.model, year: car.year };
@@ -18,7 +18,7 @@ describe('cars books routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  it.skip('/cars/:id should return car detail', async () => {
+  it('/cars/:id should return car detail', async () => {
     const res = await request(app).get('/cars/1');
     const toyota = {
       id: '1',
@@ -42,16 +42,16 @@ describe('cars books routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  // it('/books should return list of books', async () => {
-  //   const res = await request(app).get('/books/1');
-  //   const allAboutLove = {
-  //     id: '1',
-  //     title: 'all about love',
-  //     author: 'bell hooks',
-  //     published: 2000,
-  //   };
-  //   expect(res.body).toEqual(allAboutLove);
-  // });
+  it('/books should return list of books', async () => {
+    const res = await request(app).get('/books/1');
+    const allAboutLove = {
+      id: '1',
+      title: 'all about love',
+      author: 'bell hooks',
+      published: 2000,
+    };
+    expect(res.body).toEqual(allAboutLove);
+  });
 
   afterAll(() => {
     pool.end();
