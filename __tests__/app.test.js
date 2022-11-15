@@ -10,7 +10,7 @@ describe('cars books routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it.skip('/cars should return list of cars', async () => {
+  it('/cars should return list of cars', async () => {
     const res = await request(app).get('/cars');
     const expected = cars.map((car) => {
       return { id: car.id, make: car.make, model: car.model, year: car.year };
@@ -18,7 +18,7 @@ describe('cars books routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  it.skip('/cars/:id should return car detail', async () => {
+  it('/cars/:id should return car detail', async () => {
     const res = await request(app).get('/cars/1');
     const toyota = {
       id: '1',
@@ -29,7 +29,7 @@ describe('cars books routes', () => {
     expect(res.body).toEqual(toyota);
   });
 
-  it.skip('/books should return list of books', async () => {
+  it('/books should return list of books', async () => {
     const res = await request(app).get('/books2');
     const expected = books2.map((book) => {
       return {
