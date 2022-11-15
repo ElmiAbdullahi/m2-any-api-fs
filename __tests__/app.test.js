@@ -43,7 +43,7 @@ describe('cars books routes', () => {
   });
 
   it('/books/:id should return list of books', async () => {
-    const res = await request(app).get('/books/1');
+    const res = await request(app).get('/books2/1');
     const allAboutLove = {
       id: '1',
       title: 'all about love',

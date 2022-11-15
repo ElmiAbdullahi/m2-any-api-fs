@@ -17,7 +17,7 @@ VALUES
 ('Audi', 'RS7', 2020),
 ('Chevorlet Corvette','ZR1', 2019);
 
-DROP TABLE IF EXISTS books2;
+DROP TABLE IF EXISTS books2e;
 
 CREATE TABLE books2 (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
